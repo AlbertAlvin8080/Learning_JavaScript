@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#btnAdd {
+    display: none;
+}
+
+.div-button {
+    position: relative;
+    --height: 23px;
+}
+
+#btnPush {
+    display: block;
+    height: var(--height);
+}
+
+#permission-dialog {
+    position: absolute;
+    top: calc(var(--height) + 5px);
+    background-color: lightgrey;
+    border: 1px solid black;
+    width: 180px;
+    height: fit-content;
+    opacity: 0;
+    padding: 10px;
+    text-align: center;
+    transition: opacity 0.7s ease;
+}
+
+#permission-dialog * {
+    margin: 0;
+}

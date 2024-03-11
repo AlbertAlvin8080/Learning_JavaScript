@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" autocomplete="on">
+        <div>
+            <!-- <label for="idn1"></label> -->
+            <input type="number" name="n1" id="idn1" step="0.1">
+            **
+            <input type="number" name="n2" id="idn2" step="0.1">
+        </div>
+        <div>
+            <button type="button" id="idbutton">Calculate</button>
+        </div>
+    </form>
+    <div id="result">
+    </div>
+    <script>
+        let button = document.querySelector('#idbutton');
+        button.addEventListener('click', calculate);
+
+        function calculate() {
+            let n1 = Number(document.querySelector('#idn1').value);
+            let n2 = Number(document.querySelector('#idn2').value);
+            let result = document.querySelector('#result');
+            result.innerHTML = '';
+
+            sum(n1, n2, result);
+            sub(n1, n2, result);
+            pow(n1, n2, result);
+
+        }
+
+        function sum(n1, n2, result) { 
+            result.innerHTML += `<p>A soma entre ${n1} e ${n2} resulta em: ${n1+n2}</p>`;
+        }
+
+        function sub(n1, n2, result) {
+            result.innerHTML += `<p>A subtracao entre ${n1} e ${n2} resulta em: ${n1-n2}</p>`;
+        }
+
+        function pow(n1, n2, result) {
+            result.innerHTML += `<p>${n1} elevado a ${n2} resulta em: ${n1**n2}</p>`;
+        }
+    </script>
+</body>
+</html>

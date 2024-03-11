@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        "use strict"
+        const array = [1,2,3,4,5,6,7,8,9,10];
+
+        console.log(array.reduce((previous, current)=>{
+            return previous*2 + current;
+        }));
+
+        console.log(array.some((value)=>{
+            return value % 2 === 0;
+        }));
+
+        console.log(array.every((value)=>{
+            return value % 2 !== 0;
+        }));
+
+        array.find((e, i)=>{
+            const div = document.getElementsByTagName('div')[0]
+            if(e > 7) {
+                div.innerText = `array[${i}] = ${e}`
+                return true;
+            }
+            return false;
+        });
+
+        array.reverse().find((e, i)=>{
+            const div = document.getElementsByTagName('div')[1]
+            if(e > 7) {
+                div.innerText = `arrayReverse[${i}] = ${e}`
+                return true;
+            }
+            return false;
+        });
+    </script>
+</body>
+</html>

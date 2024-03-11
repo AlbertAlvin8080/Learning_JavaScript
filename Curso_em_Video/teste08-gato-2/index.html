@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            perspective: 700px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+            'mostrar imagem girar'
+            ;
+        }
+        img {
+            opacity: 0;
+            grid-area: imagem;
+            /* transform: rotateY(90deg); */
+        }
+        button {
+            height: 50px;
+            font-size: large;
+        }
+        #mostrar {
+            grid-area: mostrar;
+        }
+    </style>
+</head>
+<body>
+    <img src="Site-community-image.webp" alt="jeanxeroso">
+    <button type="button" id="mostrar">Mostrar</button>
+    <button type="button" id="girar" onclick="girarImagem()">Girar</button>
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener('click', changeImage);
+        let img = document.querySelector('img');
+        
+        let interval, opacity = img.style.opacity, angle = 0;
+
+        function girarImagem() {
+            clearInterval(interval)
+            interval = setInterval(girar, 5)
+        }
+
+        function girar() {
+            angle += 1;
+            img.style.transform = `rotateY(${angle}deg)`;
+            if(angle == 180 || angle >= 360) {
+                clearInterval(interval)
+                if(angle >= 360) {
+                    angle = 0
+                }
+            }
+        }
+
+        function changeImage() {
+            clearInterval(interval);
+            if (img.style.opacity < 1) {
+                opacity = 0;
+                interval = setInterval(showImage, 20);
+            } else {
+                opacity = 1;
+                interval = setInterval(hideImage, 20);
+            }
+        }
+
+        function showImage() {
+            opacity += 0.1;
+            if(img.style.opacity < 1) {
+                img.style.opacity = opacity;
+            } else {
+                console.log('else')
+                clearInterval(interval);
+            }
+        }
+
+        function hideImage() {
+            opacity -= 0.1;
+            if(img.style.opacity > 0) {
+                img.style.opacity = opacity
+            } else {
+                console.log('else2')
+                clearInterval(interval);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.querySelector('body').style.backgroundImage = 'linear-gradient(to right, red, blue)';
+        let n1 = Number(window.prompt('Insira um numero'));
+        let n2 = Number(window.prompt('Insira outro numero'));
+
+        document.writeln(`<h1>A soma entre ${n1} e ${n2} = ${(n1+n2).toFixed(2)}</h1>`);
+        document.writeln(`${13.4.toLocaleString('en', {style: 'currency', currency: 'URL'})}`);
+    </script>
+</body>
+</html>

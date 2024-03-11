@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: 3px solid grey;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+}
+
+.relogio {
+    padding: 10px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    font-size: 1.3em;
+}
+
+.alarme {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+}
+
+.alarme button {
+    width: 70px;
+    height: 40px;
+}

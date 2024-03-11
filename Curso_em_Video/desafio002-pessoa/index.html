@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Age and Gender Verify</h1>
+
+    <section id="fields">
+        <form action="" method="post" autocomplete="on">
+            <fieldset>
+                <legend>Fill the fields</legend>
+                <div>
+                    <label for="idnumber">Year of birth:</label>
+                    <input type="number" name="number" id="idnumber">
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+
+                    <input type="radio" name="gender" id="idmale" value="M">
+                    <label for="idmale">Male</label>
+
+                    <input type="radio" name="gender" id="idfemale" value="F">
+                    <label for="idfemale">Female</label>
+
+                    <input type="radio" name="gender" id="idnon" value="NON" checked>
+                    <label for="idnon">Non-binary</label>
+                </div>
+                <div>
+                    <button id="verifyButton" type="button" onclick="verifyData()">Verify</button>
+                </div>
+            </fieldset>
+        </form>
+        <p id="message"></p>
+        <img src="" alt="person" id="personImage">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

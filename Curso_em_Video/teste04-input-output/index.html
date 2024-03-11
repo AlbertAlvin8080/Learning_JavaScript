@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" autocomplete="on">
+        <div>
+            <label for="idphrase">Insira uma phrase:</label>
+            <input type="text" name="phrase" id="idphrase">
+        </div>
+        <div>
+            <button id="button-phrase" type="button">Send</button>
+        </div>
+        <div>
+            <output id="output-phrase"></output>
+        </div>
+    </form>
+    <script>
+        let button = document.querySelector('#button-phrase')
+        button.addEventListener('click', showPhrase)
+
+        function showPhrase() {
+            let phrase = document.querySelector('#idphrase')
+            let output = document.querySelector('#output-phrase')
+            output.textContent = `Sua frase foi '${phrase.value}'`
+        }
+    </script>
+</body>
+</html>

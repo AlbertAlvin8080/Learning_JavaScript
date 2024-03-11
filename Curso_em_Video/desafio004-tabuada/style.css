@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    height: 100vh;
+    background-color: cornflowerblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* align-items: center; */
+}
+
+.container select {
+    display: none;
+    text-align: center;
+    width: fit-content;
+    /* overflow-y: hidden; */
+    /* height: fit-content; */
+}
+
+select option {
+    padding: 0 10px;
+}
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            height: 100vh;
+            background-color: lightgrey;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        #text1 {
+            color: white;
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            font-size: 3em;
+            
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="text1" onmouseenter="">...</div>
+    <script>
+        let text1 = document.querySelector('div#text1');
+        text1.addEventListener('click', changeBackground)
+        text1.addEventListener('mouseenter', () => text1.textContent = 'click')
+        text1.addEventListener('mouseout', () => {
+            text1.textContent = '...';
+            text1.style.backgroundColor = 'green';
+        });
+
+        function changeBackground() {
+            text1.style.backgroundColor = 'red'
+            text1.textContent = 'fazueli'
+        }   
+    </script>
+</body>
+</html>

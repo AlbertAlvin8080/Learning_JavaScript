@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="external-container">
+        <div class="container" id="recipiente1">
+            <label for="inomeCurso">Nome do curso</label>
+            <input type="text" name="nomeCurso" id="inomeCurso">
+            <button type="button" id="add_antes">Adicionar Antes</button>
+            <button type="button" id="add_depois">Adicionar Depois</button>
+            <button type="button" id="rm">Remover Selecionado</button>
+            <button type="button" id="sl">Curso Selecionado</button>
+        </div>
+
+        <div class="container" id="recipiente2">
+            <div class="celula">
+                <label for="ic1" class="item">HTML</label>
+                <input type="radio" name="cursos" id="ic1">
+            </div>
+            <div class="celula">
+                <label for="ic2" class="item">CSS</label>
+                <input type="radio" name="cursos" id="ic2">
+            </div>
+            <div class="celula">
+                <label for="ic3" class="item">JavaScript</label>
+                <input type="radio" name="cursos" id="ic3">
+            </div>
+            <div class="celula">
+                <label for="ic4" class="item">XML</label>
+                <input type="radio" name="cursos" id="ic4">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

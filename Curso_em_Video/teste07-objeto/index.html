@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #personData {
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Cadastro de Pessoa</legend>
+            <div>
+                <label for="idname">Name:</label>
+                <input type="text" name="name" id="idname" required maxlength="30">
+            </div>
+            <div>
+                <label for="idweight">Weight:</label>
+                <input type="number" name="weight" id="idweight" required step="0.01">
+            </div>
+            <div>
+                <label for="idprof">Profession:</label>
+                <input type="text" name="prof" id="idprof" required maxlength="20">
+            </div>
+            <button type="button" onclick="savePerson()">Submit</button>
+        </fieldset>
+    </form>
+
+    <button type="button" id="personData" onclick="showPersonData()">See Data</button>
+
+    <h1></h1>
+
+    <script>
+        let person = {
+            name:'',
+            weight:0,
+            profession:'',
+            fatten(kg=0) {
+                this.weight += kg;
+                return this.weight;
+            }
+        }
+
+        function savePerson() {
+            person.name = document.querySelector('#idname').value;
+            person.weight = Number(document.querySelector('#idweight').value)
+            person.profession = document.querySelector('#idprof').value
+        }
+
+        function showPersonData() {
+            document.querySelector('h1').innerHTML = `Name:${person.name}<br>Weight:${person.weight}<br>Profession:${person.profession}<br>Weight after fatten:${person.fatten(2.54)}`;
+        }
+    </script>
+</body>
+</html>

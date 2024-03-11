@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    display: block;
+    margin-bottom: 13px;
+}
+
+input[type='radio'] {
+    display: initial;
+    margin-bottom: 5px;
+}
+
+.tipos {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-bottom: 13px;
+}
+
+.carros {
+    margin-top: 13px;
+    border: 5px solid black;
+    border-radius: 10px;
+    min-height: 10px;
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+}
+
+.carro {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: cornflowerblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}

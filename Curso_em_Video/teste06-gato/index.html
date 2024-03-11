@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            display: grid;
+        }
+        img {
+            height: 300px;
+            width: 400px;
+            /* opacity: 0; */
+            transform: rotateY(180deg);
+            transition: all 0.2s ease;
+        }
+        button {
+            height: 100px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="meme-da-mulher-gritando-com-o-gato-na-mesa-og-1080x630.jpg" alt="gato">
+        <button type="button">Clique Aqui</button>
+    </div>
+    <script>
+        let opacity = 0.0;
+        let button = document.querySelector('button');
+        button.addEventListener('click', checkImageState);
+
+
+        // o rotateY NAO TEM RELACAO COM O ESTADO INICIAL (defina -90deg e a img ficara -90deg em relacao ao seu ESTADO NORMAL)
+        function checkImageState() {
+            if(opacity < 1) {
+                document.querySelector('img').style.transform = 'rotateY(0deg)';
+                console.log('oi')
+                opacity = 1
+                // showImage()
+            } else {
+                // hideImage()
+                console.log('oi2')
+                document.querySelector('img').style.transform = 'rotateY(180deg)';
+                opacity = 0
+            }
+        }
+
+        function showImage() {
+            if(opacity < 1) {
+                document.querySelector('img').style.opacity = opacity;
+                opacity += 0.1;
+                console.log(opacity)
+                showImage();
+            }
+        }
+
+        function hideImage() {
+            if(opacity > 0.0) {
+                document.querySelector('img').style.opacity = opacity;
+                opacity -= 0.1;
+                console.log(opacity)
+                hideImage();
+            }
+        }
+
+    </script>
+</body>
+</html>
